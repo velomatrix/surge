@@ -1,4 +1,7 @@
 machine:
+  golang:
+    version: 1.3
+
   services:
     - docker
 
@@ -8,6 +11,7 @@ dependencies:
 
 test:
   override:
-    - docker run -p 9000:9000  -t -i surge-api revel run github.com/velomatrix/surge/api
-    - curl --retry 10 --retry-delay 5 -v http://localhost:9000
+    - export LOCAL_IP=`boot2docker ssh ip addr show eth1 |sed -nEe 's/^[ \t]*inet[ \t]*([0-9.]+)\/.*$/\1/p'`
+    - docker run -d -p $LOCAL_IP:9000:9000  -t -i surge-api revel run github.com/velomatrix/surge/api
+    - curl --retry 10 --retry-delay 5 -v http://$LOCAL_IP:9000
 
