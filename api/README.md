@@ -69,7 +69,12 @@ test
 * The [Revel sample apps](http://revel.github.io/samples/index.html).
 * The [API documentation](http://revel.github.io/docs/godoc/index.html).
 
-## Contributing
-We encourage you to contribute to Revel! Please check out the [Contributing to Revel
-guide](https://github.com/revel/revel/blob/master/CONTRIBUTING.md) for guidelines about how
-to proceed. [Join us](https://groups.google.com/forum/#!forum/revel-framework)!
+#### Running in docker locally on OS X
+
+```
+tischler@TIMs-MacBook-Pro ~/working/goverse/gopath/src/github.com/velomatrix/surge/api (docker) $ boot2docker ip
+
+The VM's Host only interface IP address is: 192.168.59.103
+
+tischler@TIMs-MacBook-Pro ~/working/goverse/gopath/src/github.com/velomatrix/surge/api (docker) $ docker run -p 192.168.59.103:9000:9000  -t -i surge-api revel run github.com/velomatrix/surge/api
+```
