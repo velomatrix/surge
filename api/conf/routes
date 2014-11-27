@@ -9,6 +9,8 @@ GET     /                                       App.Index
 GET     /runs/                                  Run.Index
 GET     /runs/:id                               Run.Show
 
+GET	/healthcheck				Check.Health
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 

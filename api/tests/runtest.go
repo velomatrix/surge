@@ -10,7 +10,7 @@ func (t *RunTest) Before() {
 	println("Set up run test")
 }
 
-func (t *RunTest) testBasicURL() {
+func (t *RunTest) TestBasicURL() {
 	t.Get("/runs")
 	t.AssertOk()
 	// TODO : extract json
