@@ -9,7 +9,7 @@ RUN go get github.com/revel/revel
 RUN go get github.com/revel/cmd/revel
 
 # launch our application
-RUN revel run github.com/velomatrix/surge/api
+RUN revel run github.com/velomatrix/surge/api &
 
 # export port 9000 to the outside world
 EXPOSE 9000
