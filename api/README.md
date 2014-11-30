@@ -78,3 +78,7 @@ The VM's Host only interface IP address is: 192.168.59.103
 
 tischler@TIMs-MacBook-Pro ~/working/goverse/gopath/src/github.com/velomatrix/surge/api (docker) $ docker run -p 192.168.59.103:9000:9000  -t -i surge-api revel run github.com/velomatrix/surge/api
 ```
+
+### Great setup for docker + OS X
+
+http://viget.com/extend/how-to-use-docker-on-os-x-the-missing-guide
