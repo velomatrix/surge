@@ -1,5 +1,5 @@
 machine:
-    golang:
+    go:
       - 1.3
 
 dependencies:
