@@ -1,6 +1,6 @@
 machine:
-  services:
-    - golang
+    golang:
+      - 1.3
 
 dependencies:
   override:
