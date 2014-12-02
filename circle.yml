@@ -9,5 +9,6 @@ test:
     - which revel
     - which go
     - ls -la
+    - pwd
 #    - revel test github.com/velomatrix/surge/api
 
