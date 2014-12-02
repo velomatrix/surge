@@ -13,5 +13,7 @@ test:
     - mkdir -p ~/.go_workspace/src/github.com/velomatrix
     - ln -s . ~/.go_workspace/src/github.com/velomatrix/surge
     - ls ~/.go_workspace/src/github.com/velomatrix
+    - ls ~/.go_workspace/src/github.com/velomatrix/surge
+    - ls ~/.go_workspace/src/github.com/velomatrix/surge/api
     - revel test github.com/velomatrix/surge/api
 
