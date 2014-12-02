@@ -5,5 +5,7 @@ dependencies:
 test:
   override:
     - go env
-#   - revel test github.com/velomatrix/surge/api
+    - which revel
+    - which go
+#    - $GOPATH/bin/revel test github.com/velomatrix/surge/api
 
