@@ -9,11 +9,14 @@ test:
     - which revel
     - which go
     - ls -la
-    - pwd
     - mkdir -p ~/.go_workspace/src/github.com/velomatrix
-    - ln -s . ~/.go_workspace/src/github.com/velomatrix/surge
-    - ls ~/.go_workspace/src/github.com/velomatrix
-    - ls ~/.go_workspace/src/github.com/velomatrix/surge
-    - ls ~/.go_workspace/src/github.com/velomatrix/surge/api
+    - ln -s ~/surge ~/.go_workspace/src/github.com/velomatrix/
     - revel test github.com/velomatrix/surge/api
+#    - pwd
+#    - mkdir -p ~/.go_workspace/src/github.com/velomatrix
+#    - ln -s . ~/.go_workspace/src/github.com/velomatrix/surge
+#    - ls ~/.go_workspace/src/github.com/velomatrix
+#    - ls ~/.go_workspace/src/github.com/velomatrix/surge
+#    - ls ~/.go_workspace/src/github.com/velomatrix/surge/api
+#    - revel test github.com/velomatrix/surge/api
 
