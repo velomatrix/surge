@@ -1,0 +1,22 @@
+dependencies:
+  override:
+    - go get github.com/revel/revel
+    - go get github.com/revel/cmd/revel
+
+test:
+  override:
+    - go env
+    - which revel
+    - which go
+    - ls -la
+    - mkdir -p ~/.go_workspace/src/github.com/velomatrix
+    - ln -s ~/surge ~/.go_workspace/src/github.com/velomatrix/
+    - revel test github.com/velomatrix/surge/api
+#    - pwd
+#    - mkdir -p ~/.go_workspace/src/github.com/velomatrix
+#    - ln -s . ~/.go_workspace/src/github.com/velomatrix/surge
+#    - ls ~/.go_workspace/src/github.com/velomatrix
+#    - ls ~/.go_workspace/src/github.com/velomatrix/surge
+#    - ls ~/.go_workspace/src/github.com/velomatrix/surge/api
+#    - revel test github.com/velomatrix/surge/api
+
