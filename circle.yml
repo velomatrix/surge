@@ -8,5 +8,5 @@ test:
     - go env
     - which revel
     - which go
-#    - $GOPATH/bin/revel test github.com/velomatrix/surge/api
+    - revel test github.com/velomatrix/surge/api
 
