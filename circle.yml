@@ -8,5 +8,6 @@ test:
     - go env
     - which revel
     - which go
-    - revel test github.com/velomatrix/surge/api
+    - ls -la
+#    - revel test github.com/velomatrix/surge/api
 
