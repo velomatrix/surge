@@ -4,5 +4,6 @@ dependencies:
 
 test:
   override:
-    - revel test github.com/velomatrix/surge/api
+    - go env
+#   - revel test github.com/velomatrix/surge/api
 
