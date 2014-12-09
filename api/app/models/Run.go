@@ -17,13 +17,13 @@ func FindRun(s *mgo.Session, id bson.ObjectId) *Run {
 	return &run
 }
 
-func FindAllRuns(s *mgo.Session) *[]Run {
+func FindAllRuns(s *mgo.Session) (*[]Run, error) {
 	var results []Run
 
 	err := s.DB("").C("runs").Find(nil).All(&results)
 	if err != nil {
 		fmt.Printf("Unable to retrieve all Run documents")
-		return nil
+		return nil, err
 	}
-	return &results
+	return &results, nil
 }

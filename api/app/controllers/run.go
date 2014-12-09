@@ -14,7 +14,7 @@ type Run struct {
 
 // returns a list of runs
 func (c Run) Index() revel.Result {
-	runs := models.FindAllRuns(c.MongoSession)
+	runs, _ := models.FindAllRuns(c.MongoSession)
 	return c.RenderJson(runs)
 }
 

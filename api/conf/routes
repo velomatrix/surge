@@ -11,6 +11,10 @@ GET     /runs/:id                               Run.Show
 
 GET	/healthcheck				Check.Health
 
+GET	/users/					User.Index
+GET	/users/:id				User.Show
+PUT	/users/					User.Create
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
