@@ -20,6 +20,6 @@ func (c Run) Index() revel.Result {
 
 // returns a single run
 func (c Run) Show(id string) revel.Result {
-	run := models.FindRun(c.MongoSession, bson.ObjectIdHex(id))
+	run, _ := models.FindRun(c.MongoSession, bson.ObjectIdHex(id))
 	return c.RenderJson(run)
 }

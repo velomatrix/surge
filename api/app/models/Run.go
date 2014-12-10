@@ -11,10 +11,15 @@ type Run struct {
 	Name string        `json:"name" bson:"name"`
 }
 
-func FindRun(s *mgo.Session, id bson.ObjectId) *Run {
+func FindRun(s *mgo.Session, id bson.ObjectId) (*Run, error) {
 	var run Run
-	s.DB("").C("runs").FindId(id).One(&run)
-	return &run
+
+	err := s.DB("").C("runs").FindId(id).One(&run)
+	if err != nil {
+		fmt.Printf("Unable to retrieve run")
+		return nil, err
+	}
+	return &run, nil
 }
 
 func FindAllRuns(s *mgo.Session) (*[]Run, error) {
