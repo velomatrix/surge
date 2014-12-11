@@ -29,3 +29,14 @@ func FindAllRuns() (*[]Run, error) {
 	}
 	return &results, nil
 }
+
+func CreateRun(run *Run) error {
+	id := bson.NewObjectId()
+	_, err := mongo.Config.Session.DB("").C("runs").UpsertId(id, run)
+	if err != nil {
+		return err
+	}
+	run.Id = id
+
+	return nil
+}
