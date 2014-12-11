@@ -3,6 +3,7 @@ package tests
 import (
 	"encoding/json"
 	"github.com/revel/revel"
+	"github.com/velomatrix/surge/api/app/lib"
 	"github.com/velomatrix/surge/api/app/models"
 	"gopkg.in/mgo.v2"
 )
@@ -17,16 +18,10 @@ type RunsResult []models.Run
 
 func (t *RunTest) Before() {
 
-	// next step should be to use the configuration information
-	session, err := mgo.Dial("localhost")
-	if err != nil {
-		panic(err)
-	}
+	mongo.InitDB()
 
-	t.Session = session
-	t.Session.SetMode(mgo.Monotonic, true)
-	c := t.Session.DB("test").C("runs")
-	err = c.Insert(&models.Run{"000000000001", "Run A"})
+	c := mongo.Config.Session.DB("test").C("runs")
+	err := c.Insert(&models.Run{"000000000001", "Run A"})
 	if err != nil {
 		// lets be forgiving because right now it will fail if it's already there
 		// should be more robust later
