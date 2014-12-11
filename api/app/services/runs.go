@@ -7,10 +7,11 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
-func FindRun(id bson.ObjectId) (*Run, error) {
+func FindRun(id string) (*Run, error) {
 	var run Run
 
-	err := mongo.Config.Session.DB("").C("runs").FindId(id).One(&run)
+	objectId := bson.ObjectIdHex(id)
+	err := mongo.Config.Session.DB("").C("runs").FindId(objectId).One(&run)
 	if err != nil {
 		fmt.Printf("Unable to retrieve run")
 		return nil, err

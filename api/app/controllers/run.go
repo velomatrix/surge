@@ -4,7 +4,6 @@ import (
 	"github.com/revel/revel"
 	"github.com/velomatrix/revmgo"
 	"github.com/velomatrix/surge/api/app/services"
-	"gopkg.in/mgo.v2/bson"
 )
 
 type Run struct {
@@ -20,6 +19,6 @@ func (c Run) Index() revel.Result {
 
 // returns a single run
 func (c Run) Show(id string) revel.Result {
-	run, _ := services.FindRun(bson.ObjectIdHex(id))
+	run, _ := services.FindRun(id)
 	return c.RenderJson(run)
 }
