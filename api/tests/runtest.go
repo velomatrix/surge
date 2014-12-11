@@ -5,7 +5,6 @@ import (
 	"github.com/revel/revel"
 	"github.com/velomatrix/surge/api/app/lib"
 	"github.com/velomatrix/surge/api/app/models"
-	"github.com/velomatrix/surge/api/app/services"
 	"gopkg.in/mgo.v2"
 )
 
@@ -21,8 +20,8 @@ func (t *RunTest) Before() {
 
 	mongo.InitDB()
 
-	var run *models.Run = &models.Run{Name: "Run A"}
-	err := services.CreateRun(run)
+	c := mongo.Config.Session.DB("test").C("runs")
+	err := c.Insert(&models.Run{"000000000001", "Run A"})
 	if err != nil {
 		// lets be forgiving because right now it will fail if it's already there
 		// should be more robust later
