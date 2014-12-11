@@ -1,15 +1,12 @@
-package app
+package main
 
 import (
-	"fmt"
+	. "github.com/velomatrix/surge/api/app/handlers"
 	"net/http"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome!")
-}
-
 func main() {
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/run/{id}", ListRunsHandler)
+	http.HandleFunc("/runs", ListRunsHandler)
 	http.ListenAndServe(":8080", nil)
 }
