@@ -1,0 +1,49 @@
+{
+    "jobs": [
+        {
+            "id": "abc123",
+            "max_requests": 20500,
+            "max_time": 300,
+            "name": "Some name here",
+            "providers": [
+                {
+                    "datacenter": "us-east-1",
+                    "id": "amazon",
+                    "weight": 4
+                },
+                {
+                    "datacenter": "sf-2",
+                    "id": "azure",
+                    "weight": 2
+                },
+                {
+                    "datacenter": "nyc-5",
+                    "id": "google",
+                    "weight": 1
+                }
+            ],
+            "urls": [
+                {
+                    "headers": [
+                        "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/21.0"
+                    ],
+                    "request_method": "GET",
+                    "url": "http://legit.com/crossdomain.xml"
+                },
+                {
+                    "body": "The entire body goes here",
+                    "headers": [
+                        "Authorization: ryin:supersecret",
+                        "Cookie: $Version=1; Skin=new;",
+                        "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/21.0"
+                    ],
+                    "request_method": "POST",
+                    "url": "http://www.legit.com/api/v1/users"
+                }
+            ]
+        }
+    ],
+    "payment_id": "paid-847",
+    "submitted_at": "2014-12-13T17:04:22.00Z",
+    "user_id": "ryin"
+}
